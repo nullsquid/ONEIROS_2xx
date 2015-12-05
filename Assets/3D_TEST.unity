@@ -444,6 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 684363477}
   stepToCycle: 0
+  cachedTransform: {fileID: 646213776}
 --- !u!1 &684363476
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105f49d931af540f28b2b20d46a8c641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _relativeSize: 1
+  _relativeSize: 0
   _size: {x: 5, y: 5, z: 5}
   _renderFrom: {x: -5, y: -5, z: -5}
   _renderTo: {x: 5, y: 5, z: 5}
