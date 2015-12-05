@@ -3,13 +3,11 @@ using System.Collections;
 
 public class CHAR_GRID_MOVE : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public GFRectGrid grid;
+	public int unitsToCycles = 1;
+
+	void Move(){
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
