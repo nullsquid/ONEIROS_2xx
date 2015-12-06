@@ -55,10 +55,19 @@ public class CHARACTER_MOVE : MonoBehaviour {
         //{
         // Debug.Log(i);
         if (Mathf.Abs(newPosition.z) > grid.size.z){
-            Debug.Log("too far");
-                //transform.position.z -= Mathf.Sign(newPosition.z) * 2.0f;
+            //Debug.Log("too far");
+            //transform.position.z -= Mathf.Sign(newPosition.z) * 2.0f;
+            //transform.position.z =
+            //transform.position.z = new Vector3(0, 0, grid.size.z);
+            //setting the elements of a vector3 individually
+            //look up grid constraints, broadly
                 
             }
+        if(Mathf.Abs(newPosition.x) > grid.size.x)
+        {
+            //stop it from going further
+
+        }
         //}
         return grid.GridToWorld(newPosition);
     }
