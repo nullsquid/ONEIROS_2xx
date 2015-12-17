@@ -4170,6 +4170,7 @@ Transform:
 --- !u!1001 &1433394112
 Prefab:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 882303534}
@@ -4318,6 +4319,20 @@ Transform:
   m_PrefabParentObject: {fileID: 481866, guid: 2ffed2cb84dfba44bb5e190c1ce1094b, type: 2}
   m_PrefabInternal: {fileID: 1461740230}
 --- !u!1 &1465070696
+=======
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 646213771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e87001ce2098349819d8097a9c3204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 684363477}
+  stepToCycle: 0
+  cachedTransform: {fileID: 646213776}
+--- !u!1 &684363476
+>>>>>>> 1458270c9776f051e2d096d65c613e7da5a34ca0
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -4332,7 +4347,56 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1465070697
+=======
+--- !u!114 &684363477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684363476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105f49d931af540f28b2b20d46a8c641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _relativeSize: 0
+  _size: {x: 5, y: 5, z: 5}
+  _renderFrom: {x: -5, y: -5, z: -5}
+  _renderTo: {x: 5, y: 5, z: 5}
+  _originOffset: {x: 0, y: 0, z: 0}
+  axisColors:
+    values:
+    - {r: 1, g: 0, b: 0, a: .5}
+    - {r: 0, g: 1, b: 0, a: .5}
+    - {r: 0, g: 0, b: 1, a: .5}
+  useSeparateRenderColor: 0
+  renderAxisColors:
+    values:
+    - {r: .5, g: .5, b: .5, a: 1}
+    - {r: .5, g: .5, b: .5, a: 1}
+    - {r: .5, g: .5, b: .5, a: 1}
+  hideGrid: 0
+  hideOnPlay: 0
+  hideAxis:
+    values: 000000
+  drawOrigin: 0
+  renderGrid: 1
+  _useCustomRenderRange: 1
+  _renderLineWidth: 1
+  renderMaterial: {fileID: 0}
+  _spacing: {x: 1, y: 1, z: 1}
+  _shearing:
+    values:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+--- !u!4 &684363478
+>>>>>>> 1458270c9776f051e2d096d65c613e7da5a34ca0
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
