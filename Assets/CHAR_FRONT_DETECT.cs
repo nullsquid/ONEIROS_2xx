@@ -6,7 +6,9 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
     public GameObject detector;
     public GameObject holder;
     public float detectDistance = 10;
-
+    public bool canMoveObject = false;
+    public bool canPressObject = false;
+    public Transform moveTarget;
     void Update()
     {
         DetectForwardObject();
@@ -20,9 +22,13 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
         if (Physics.Raycast(detector.transform.position, fwd, out objectHit, detectDistance))
         {
             
+            
             if(objectHit.collider.tag == "Movable")
-            {
-                Transform moveTarget = objectHit.transform;
+            {   
+
+                moveTarget = objectHit.transform;
+                canMoveObject = true;
+                /*
                 Debug.Log(moveTarget.name);
                 //pick up
                 Debug.Log("this is movable");
@@ -30,7 +36,11 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
                 {
                     Debug.Log("Pick up");
                     moveTarget.parent = holder.transform;
+                    moveTarget.transform.position = holder.transform.position;
+
                 }
+                */
+
             }
             else if(objectHit.collider.tag == "Pressable")
             {
@@ -38,7 +48,12 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
                 Debug.Log("This is pressable");
             }
             
-                
+        }
+        else
+        {
+            //Debug.Log("nothing");
+            canMoveObject = false;
+            canPressObject = false;
         }
 
     }
