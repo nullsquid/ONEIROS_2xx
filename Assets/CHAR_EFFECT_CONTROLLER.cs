@@ -18,10 +18,13 @@ public class CHAR_EFFECT_CONTROLLER : MonoBehaviour {
         if(interactor.isHoldingObject == true)
         {
             auraGlow.SetActive(true);
+            isEmittingParticles = true;
         }
         else if (interactor.isHoldingObject == false)
         {
             auraGlow.SetActive(false);
+            isEmittingParticles = false;
+                
         }
     }
     
