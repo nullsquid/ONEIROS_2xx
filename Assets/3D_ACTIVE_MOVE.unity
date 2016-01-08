@@ -8355,8 +8355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578361445a3cc440b69163a835e1c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rows: 30
-  Columns: 30
+  Rows: 21
+  Columns: 21
   layerNames:
   - 
   layerVisibility: 01
