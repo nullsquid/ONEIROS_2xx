@@ -16,9 +16,9 @@ public class CHAR_INTERACT : MonoBehaviour {
     {
         if (detector.canMoveObject == true && isHoldingObject == false)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log(KeyCode.Mouse0);
+                //detector.moveTarget.transform.position = detector
                 detector.moveTarget.parent = detector.holder.transform;
                 detector.moveTarget.transform.position = detector.holder.transform.position;
                 isHoldingObject = true;
@@ -29,10 +29,11 @@ public class CHAR_INTERACT : MonoBehaviour {
         }
         else if (isHoldingObject == true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 //detector.moveTarget.transform.position = grid.NearestFaceG(transform.position, GridFramework.GridPlane.XZ);
-                detector.moveTarget.parent = null;
+
+                detector.holder.transform.DetachChildren();
                 isHoldingObject = false;
 
                 

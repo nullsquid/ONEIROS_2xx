@@ -36,7 +36,7 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
                 {
                     Debug.Log("Pick up");
                     moveTarget.parent = holder.transform;
-                    moveTarget.transform.position = holder.transform.position;
+                    moveTarget.transform.position = howlder.transform.position;
 
                 }
                 */
