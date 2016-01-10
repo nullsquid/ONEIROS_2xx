@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Movable
-  - Pressable
+  - IN PORT
+  - OUT PORT
   layers:
   - Default
   - TransparentFX

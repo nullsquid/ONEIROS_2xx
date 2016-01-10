@@ -19,9 +19,7 @@ public class CHAR_INTERACT : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 //detector.moveTarget.transform.position = detector
-                detector.moveTarget.parent = detector.holder.transform;
-                detector.moveTarget.transform.position = detector.holder.transform.position;
-                isHoldingObject = true;
+                PickUp();
 
 
             }
@@ -31,13 +29,20 @@ public class CHAR_INTERACT : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //detector.moveTarget.transform.position = grid.NearestFaceG(transform.position, GridFramework.GridPlane.XZ);
-
-                detector.holder.transform.DetachChildren();
-                isHoldingObject = false;
-
+                PutDown();
                 
             }
         }
+    }
+
+    void PutDown() {
+        detector.holder.transform.DetachChildren();
+        isHoldingObject = false;
+    }
+
+    void PickUp() {
+        detector.moveTarget.parent = detector.holder.transform;
+        detector.moveTarget.transform.position = detector.holder.transform.position;
+        isHoldingObject = true;
     }
 }
