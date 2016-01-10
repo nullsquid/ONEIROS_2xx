@@ -30,7 +30,6 @@ public class CHAR_INTERACT : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 PutDown();
-                
             }
         }
     }
