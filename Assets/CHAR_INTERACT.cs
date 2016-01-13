@@ -43,5 +43,10 @@ public class CHAR_INTERACT : MonoBehaviour {
         detector.moveTarget.parent = detector.holder.transform;
         detector.moveTarget.transform.position = detector.holder.transform.position;
         isHoldingObject = true;
+        StartCoroutine(WaitToReconnect());
+    }
+    IEnumerator WaitToReconnect() {
+        yield return new WaitForSeconds(.3f);
+        EventManager.TriggerEvent("binOff");
     }
 }

@@ -9,22 +9,31 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
     public bool canMoveObject = false;
     public bool canPressObject = false;
     public Transform moveTarget;
-    void Update()
-    {
-        DetectForwardObject();
+    
+
+    
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Movable") {
+            moveTarget = other.transform;
+            canMoveObject = true;
+        }
     }
-    void DetectForwardObject()
-    {
+    void OnTriggerExit(Collider other) {
+        if (other.tag == "Movable") {
+            canMoveObject = false;
+        }
+    }
+
+
+    void DetectForwardObject() {
         RaycastHit objectHit;
         Vector3 fwd = detector.transform.TransformDirection(Vector3.forward);
         Debug.DrawRay(detector.transform.position, fwd * detectDistance, Color.green);
-        
-        if (Physics.Raycast(detector.transform.position, fwd, out objectHit, detectDistance))
-        {
-            
-            
-            if(objectHit.collider.tag == "Movable")
-            {   
+
+        if (Physics.Raycast(detector.transform.position, fwd, out objectHit, detectDistance)) {
+
+
+            if (objectHit.collider.tag == "Movable") {
 
                 moveTarget = objectHit.transform;
                 canMoveObject = true;
@@ -42,15 +51,13 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
                 */
 
             }
-            else if(objectHit.collider.tag == "Pressable")
-            {
+            else if (objectHit.collider.tag == "Pressable") {
                 //press
                 Debug.Log("This is pressable");
             }
-            
+
         }
-        else
-        {
+        else {
             //Debug.Log("nothing");
             canMoveObject = false;
             canPressObject = false;
