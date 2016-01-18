@@ -18,10 +18,8 @@ public class CHAR_INTERACT : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Pick up");
-                detector.moveTarget.parent = detector.holder.transform;
-                detector.moveTarget.transform.position = detector.holder.transform.position;
-                isHoldingObject = true;
+                //detector.moveTarget.transform.position = detector
+                PickUp();
 
 
             }
@@ -31,12 +29,24 @@ public class CHAR_INTERACT : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //detector.moveTarget.transform.position = grid.NearestFaceG(transform.position, GridFramework.GridPlane.XZ);
-                detector.moveTarget.parent = null;
-                isHoldingObject = false;
-
-                
+                PutDown();
             }
         }
+    }
+
+    void PutDown() {
+        detector.holder.transform.DetachChildren();
+        isHoldingObject = false;
+    }
+
+    void PickUp() {
+        detector.moveTarget.parent = detector.holder.transform;
+        detector.moveTarget.transform.position = detector.holder.transform.position;
+        isHoldingObject = true;
+        StartCoroutine(WaitToReconnect());
+    }
+    IEnumerator WaitToReconnect() {
+        yield return new WaitForSeconds(.3f);
+        EventManager.TriggerEvent("binOff");
     }
 }
