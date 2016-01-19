@@ -14,13 +14,25 @@ public class PRESSURESWITCH : MonoBehaviour {
             }
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            EventManager.TriggerEvent("startFill");
+        }
+    }
     void OnTriggerExit(Collider other) {
         if (other.tag == "Player") {
             if (isPressed == true) {
                 isPressed = false;
                 isOutputting = false;
+                
                 StartCoroutine(Depress());
+                
             }
+            //Debug.Log("hey");
+            StopAllCoroutines();
+            EventManager.TriggerEvent("startCountdown");
         }
     }
     void Update() {

@@ -13,6 +13,8 @@ public class TimeDisplayController : MonoBehaviour {
     public Color unfilledColor;
     public OUTPUT_TRUE output;
     public INPUT input;
+    public OUT_PLUG plug;
+    public OUTPUT output_check;
 	// Use this for initialization
 	void Start () {
 	    foreach(Transform child in gameObject.GetComponent<Transform>())
@@ -40,10 +42,13 @@ public class TimeDisplayController : MonoBehaviour {
 	// Update is called once per frame
 	void TriggerCountdown()
     {
-        Debug.Log("working");
-        //StopCoroutine("TriggerFill");
-        StartCoroutine(CountDown(waitSeconds));
-
+        //if (output_check.isOn)
+       //{
+            
+            Debug.Log("working");
+            StopCoroutine("TriggerFill");
+            StartCoroutine(CountDown(waitSeconds));
+        //}
     }
 
     void ChangeColor(Transform currentChild)
@@ -53,14 +58,19 @@ public class TimeDisplayController : MonoBehaviour {
     }
     void TriggerFill()
     {
-        //StopCoroutine("TriggerCountdown");
-        StartCoroutine(StartFilling(waitSeconds));
+        if (output_check.isOn)
+        {
+            StopCoroutine("TriggerCountdown");
+            StartCoroutine(StartFilling(waitSeconds));
+        }
     }
     
     IEnumerator StartFilling(int waitTime)
     {
-        while (input.binValue == true)
+        if (output_check.isOn)
         {
+            output.isOn = true;
+        }
             int i = 0;
             while (i < revChildren.Count)
             {
@@ -70,30 +80,36 @@ public class TimeDisplayController : MonoBehaviour {
                 curChild.GetComponent<Renderer>().enabled = true;
                 i += 1;
                 
-            }
+            
             curChild = null;
             //StartCoroutine(CountDown(waitSeconds));
             //moduleIsFull = true;
-        }
+            }
+        
     }
     IEnumerator CountDown(int waitTime)
     {
         countDownIsComplete = false;
         //while (countDownIsComplete == false) {
-            while (input.binValue == false)
-            {
+            //while (input.binValue == false)
+            //{
                 
                 Debug.Log("bin value");
                 for (int i = 0; i < children.Count; i++)
                 {
-                    newCurChild = children[i];
+                    curChild = children[i];
                     yield return new WaitForSeconds(waitTime);
-                    //ChangeColor(curChild);
-                    curChild.GetComponent<GameObject>().SetActive(false);
-                    //Debug.Log(curChild);
-
-                }
+                //ChangeColor(curChild);
+                //curChild.GetComponent<GameObject>().SetActive(false);
+                curChild.GetComponent<MeshRenderer>().enabled = false;
+            //Debug.Log(curChild);
+            if (output_check.isOn)
+            {
+                output.isOn = true;
             }
+                }
+        output.isOn = false;
+            //}
             //countDownIsComplete = true;
         //}
     }

@@ -8,6 +8,7 @@ public class INPUT : MonoBehaviour {
     public bool binValue = false;
     //public bool isOn = false;
     public bool isConnected = false;
+
     void Awake() {
         //inputListenerOn = new UnityAction(TurnInputOn);
         //inputListenerOff = new UnityAction(TurnInputOff);

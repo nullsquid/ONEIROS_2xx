@@ -3384,11 +3384,13 @@ MonoBehaviour:
   newCurChild: {fileID: 0}
   countDownIsComplete: 0
   moduleIsFull: 0
-  waitSeconds: 3
+  waitSeconds: 1
   filledColor: {r: 0.007352948, g: 1, b: 0.3427993, a: 0}
   unfilledColor: {r: 1, g: 1, b: 1, a: 0}
   output: {fileID: 654782701}
   input: {fileID: 754593704}
+  plug: {fileID: 1913332537}
+  output_check: {fileID: 654782702}
 --- !u!1001 &707440081
 Prefab:
   m_ObjectHideFlags: 0
