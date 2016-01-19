@@ -8,7 +8,9 @@ public class PRESSURESWITCH : MonoBehaviour {
         if (other.tag == "Player") {
             if (isPressed == false) {
                 isPressed = true;
+                isOutputting = true;
                 StartCoroutine(Compress());
+
             }
         }
     }
@@ -16,6 +18,7 @@ public class PRESSURESWITCH : MonoBehaviour {
         if (other.tag == "Player") {
             if (isPressed == true) {
                 isPressed = false;
+                isOutputting = false;
                 StartCoroutine(Depress());
             }
         }

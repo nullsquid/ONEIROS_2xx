@@ -1361,7 +1361,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24d6c9e73f8f1ee4c82c161772653ee5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fcc269628b0314b97daa4dc70dc5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plug: {fileID: 0}
+  plug: {fileID: 1913332537}
 --- !u!1001 &336503662
 Prefab:
   m_ObjectHideFlags: 0
@@ -2305,7 +2305,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24d6c9e73f8f1ee4c82c161772653ee5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onMaterial: {fileID: 0}
-  hasFixedOutput: 1
+  hasFixedOutput: 0
   outputsToExit: 0
   isOn: 0
 --- !u!65 &654782703
@@ -3376,11 +3376,19 @@ MonoBehaviour:
   - {fileID: 2139046273}
   - {fileID: 485125582}
   - {fileID: 285154336}
+  revChildren:
+  - {fileID: 285154336}
+  - {fileID: 485125582}
+  - {fileID: 2139046273}
   curChild: {fileID: 0}
+  newCurChild: {fileID: 0}
   countDownIsComplete: 0
+  moduleIsFull: 0
   waitSeconds: 3
   filledColor: {r: 0.007352948, g: 1, b: 0.3427993, a: 0}
   unfilledColor: {r: 1, g: 1, b: 1, a: 0}
+  output: {fileID: 654782701}
+  input: {fileID: 754593704}
 --- !u!1001 &707440081
 Prefab:
   m_ObjectHideFlags: 0
@@ -9761,7 +9769,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24d6c9e73f8f1ee4c82c161772653ee5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

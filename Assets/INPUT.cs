@@ -6,6 +6,7 @@ public class INPUT : MonoBehaviour {
     //private UnityAction inputListenerOff;
     float value;
     public bool binValue = false;
+    //public bool isOn = false;
     public bool isConnected = false;
     void Awake() {
         //inputListenerOn = new UnityAction(TurnInputOn);
@@ -29,7 +30,7 @@ public class INPUT : MonoBehaviour {
         if (binValue == false) {
             binValue = true;
             isConnected = true;
-            
+            //EventManager.TriggerEvent("startFill");
         }
         //gameObject.GetComponent<BoxCollider>().enabled = false;
         EventManager.TriggerEvent("outOn");
@@ -40,6 +41,7 @@ public class INPUT : MonoBehaviour {
         if (binValue == true) {
             binValue = false;
             isConnected = false;
+            //EventManager.TriggerEvent("startCountdown");
             
         }
         EventManager.TriggerEvent("outOff");
