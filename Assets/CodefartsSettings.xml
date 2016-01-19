@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <settings>
+<<<<<<< HEAD
   <entry key="GridMapping.ActiveLayerIndex">0</entry>
   <entry key="GridMapping.CurrentPrefab">2ffed2cb84dfba44bb5e190c1ce1094b</entry>
+=======
+  <entry key="GridMapping.ActiveLayerIndex">1</entry>
+  <entry key="GridMapping.CurrentPrefab">0f273fac936513e4ba237406399c610a</entry>
+>>>>>>> 4bd082b886041b6338009d7c6983ef3ec919f83b
   <entry key="GridMapping.CurrentPrefabCategoryIndex">7</entry>
   <entry key="GridMapping.CurrentPrefabIndex">0</entry>
   <entry key="GridMapping.LastDrawingToolUID">eb421f34-47c9-400c-bdb8-a158db2e85c5</entry>
