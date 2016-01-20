@@ -3,6 +3,9 @@ using System.Collections;
 
 public class RenderLineToPlug : MonoBehaviour {
     public OUT_PLUG plug;
+    public OUTPUT_TRUE output_check;
+    public bool isFromWait;
+    public bool isFromSwitch;
     LineRenderer line;
     PRESSURESWITCH pSwitch;
 	// Use this for initialization
@@ -18,11 +21,16 @@ public class RenderLineToPlug : MonoBehaviour {
 	void Update () {
 
         line.SetPosition(1, plug.transform.position);
-        if(pSwitch.isOutputting == true) {
-            line.enabled = true;
-        }
-        else if(pSwitch.isOutputting == false) {
-            line.enabled = false;
-        }
+            if (pSwitch.isOutputting == true)
+            {
+                line.enabled = true;
+            }
+            else if (pSwitch.isOutputting == false)
+            {
+                line.enabled = false;
+            }
+        
+        
+        
 	}
 }

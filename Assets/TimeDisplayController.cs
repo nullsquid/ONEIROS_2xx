@@ -12,6 +12,7 @@ public class TimeDisplayController : MonoBehaviour {
     public Color filledColor;
     public Color unfilledColor;
     public OUTPUT_TRUE output;
+    public PRESSURESWITCH pSwitch;
     public INPUT input;
     public OUT_PLUG plug;
     public OUTPUT output_check;
@@ -30,12 +31,14 @@ public class TimeDisplayController : MonoBehaviour {
     
     void OnEnable()
     {
+        EventManager.StartListening("stopFill", StopFill);
         EventManager.StartListening("startCountdown", TriggerCountdown);
         EventManager.StartListening("startFill", TriggerFill);
     }
 
     void OnDisable()
     {
+        EventManager.StopListening("stopFill", StopFill);
         EventManager.StopListening("startCountdown", TriggerCountdown);
         EventManager.StopListening("startFill", TriggerFill);
     }
@@ -60,9 +63,14 @@ public class TimeDisplayController : MonoBehaviour {
     {
         if (output_check.isOn)
         {
-            StopCoroutine("TriggerCountdown");
+            //StopCoroutine("TriggerCountdown");
             StartCoroutine(StartFilling(waitSeconds));
         }
+    }
+
+    void StopFill()
+    {
+        StopCoroutine("TriggerFill");
     }
     
     IEnumerator StartFilling(int waitTime)
@@ -77,14 +85,20 @@ public class TimeDisplayController : MonoBehaviour {
                 yield return new WaitForSeconds(waitTime);
                 curChild = revChildren[i];
                 
+                if(pSwitch.isOutputting == false)
+            {
+                yield break;
+            }
                 curChild.GetComponent<Renderer>().enabled = true;
                 i += 1;
+
                 
             
             curChild = null;
             //StartCoroutine(CountDown(waitSeconds));
             //moduleIsFull = true;
             }
+         
         
     }
     IEnumerator CountDown(int waitTime)
@@ -99,6 +113,7 @@ public class TimeDisplayController : MonoBehaviour {
                 {
                     curChild = children[i];
                     yield return new WaitForSeconds(waitTime);
+                    //if()
                 //ChangeColor(curChild);
                 //curChild.GetComponent<GameObject>().SetActive(false);
                 curChild.GetComponent<MeshRenderer>().enabled = false;

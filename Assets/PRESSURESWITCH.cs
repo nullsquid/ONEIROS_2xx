@@ -31,7 +31,8 @@ public class PRESSURESWITCH : MonoBehaviour {
                 
             }
             //Debug.Log("hey");
-            StopAllCoroutines();
+            //StopAllCoroutines();
+            EventManager.TriggerEvent("stopFill");
             EventManager.TriggerEvent("startCountdown");
         }
     }
