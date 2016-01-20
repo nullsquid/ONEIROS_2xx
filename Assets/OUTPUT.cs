@@ -36,10 +36,10 @@ public class OUTPUT : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (isOn == true) {
-            line.material = line.materials[1];
+            //line.material = line.materials[1];
         }
         else  {
-            line.material = line.materials[0];
+            //line.material = line.materials[0];
         }
         if (outputsToExit) {
             if (isOn) {
