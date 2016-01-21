@@ -9,6 +9,7 @@ TagManager:
   - OUT PORT
   - Pressable
   - wall
+  - limiter
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - limiter
   - 
   - 
   - 

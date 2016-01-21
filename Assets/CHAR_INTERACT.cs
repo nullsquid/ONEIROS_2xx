@@ -14,6 +14,11 @@ public class CHAR_INTERACT : MonoBehaviour {
 
     void Update()
     {
+        if (detector.canPressObject == true) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                EventManager.TriggerEvent("increaseCutoff");
+            }
+        }
         if (detector.canMoveObject == true && isHoldingObject == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))

@@ -1409,7 +1409,7 @@ GameObject:
   - 114: {fileID: 577798636}
   m_Layer: 0
   m_Name: Limiter
-  m_TagString: Untagged
+  m_TagString: limiter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1480,6 +1480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8008e587800285447b478811833eaaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pips: []
+  inPower: 3
+  limiting: 0
+  outPower: 0
 --- !u!1 &587684419
 GameObject:
   m_ObjectHideFlags: 0

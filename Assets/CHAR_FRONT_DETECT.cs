@@ -8,6 +8,7 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
     public float detectDistance = 10;
     public bool canMoveObject = false;
     public bool canPressObject = false;
+
     public Transform moveTarget;
     
 
@@ -17,10 +18,16 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
             moveTarget = other.transform;
             canMoveObject = true;
         }
+        else if (other.tag == "limiter") {
+            canPressObject = true;
+        }
     }
     void OnTriggerExit(Collider other) {
         if (other.tag == "Movable") {
             canMoveObject = false;
+        }
+        else if (other.tag == "limiter") {
+            canPressObject = false;
         }
     }
 
@@ -51,8 +58,9 @@ public class CHAR_FRONT_DETECT : MonoBehaviour {
                 */
 
             }
-            else if (objectHit.collider.tag == "Pressable") {
+            else if (objectHit.collider.tag == "limiter") {
                 //press
+                canPressObject = true;
                 Debug.Log("This is pressable");
             }
 
