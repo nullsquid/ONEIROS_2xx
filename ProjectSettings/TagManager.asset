@@ -8,6 +8,7 @@ TagManager:
   - IN PORT
   - OUT PORT
   - Pressable
+  - wall
   layers:
   - Default
   - TransparentFX
