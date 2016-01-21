@@ -1488,6 +1488,7 @@ GameObject:
   - 23: {fileID: 577798632}
   - 114: {fileID: 577798636}
   - 120: {fileID: 577798637}
+  - 114: {fileID: 577798638}
   m_Layer: 0
   m_Name: Limiter
   m_TagString: limiter
@@ -1609,6 +1610,17 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
+--- !u!114 &577798638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 577798631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa753e63d8e948a41aba54d542d5a3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587684419
 GameObject:
   m_ObjectHideFlags: 0
