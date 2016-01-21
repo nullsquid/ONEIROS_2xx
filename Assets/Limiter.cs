@@ -23,9 +23,9 @@ public class Limiter : MonoBehaviour {
     void Update() {
         switch (limiting)
         {
-            /*case 0:
+            case 0:
                 CheckPips(limiting);
-                break;*/
+                break;
             case 1:
                 CheckPips(limiting);
                 break;
@@ -37,17 +37,39 @@ public class Limiter : MonoBehaviour {
                 break;
         }
     }
+
+    //HACK
+    //Not scalable
     void CheckPips(int threshold)
     {
-        foreach(Transform child in gameObject.GetComponent<Transform>())
-        {
-            
+        if (threshold == 0) {
+            for(int i = 0; i < pips.Count; i++) {
+                pips[i].GetComponent<Renderer>().enabled = true;
+            }
+        }
+        else if(threshold == 1) {
+            for(int i = 0; i < pips.Count; i++) {
+                if(i == 2) {
+                    pips[i].GetComponent<Renderer>().enabled = false;
+                }
+            }
+        }
+        else if (threshold == 2) {
+            for (int i = 0; i < pips.Count; i++) {
+                if (i == 1) {
+                    pips[i].GetComponent<Renderer>().enabled = false;
+                }
+            }
+        }
+        else if (threshold == 3) {
+            for (int i = 0; i < pips.Count; i++) {
+                if (i == 0) {
+                    pips[i].GetComponent<Renderer>().enabled = false;
+                }
+            }
         }
 
-        for(int i = threshold; i > 0; i--)
-        {
-            pips[i].GetComponent<Renderer>().enabled = false;
-        }
+
 
     }
 
