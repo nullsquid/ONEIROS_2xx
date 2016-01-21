@@ -5,7 +5,7 @@ public class PRESSURESWITCH : MonoBehaviour {
     public bool isPressed;
     public bool isOutputting;
 	void OnTriggerStay(Collider other) {
-        if (other.tag == "Player") {
+        if (other.tag == "Player" || other.tag == "Actor") {
             if (isPressed == false) {
                 isPressed = true;
                 isOutputting = true;
@@ -16,6 +16,9 @@ public class PRESSURESWITCH : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Actor") {
+            StartCoroutine(Compress());
+        }
         if(other.tag == "Player")
         {
             EventManager.TriggerEvent("startFill");

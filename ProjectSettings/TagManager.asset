@@ -10,6 +10,7 @@ TagManager:
   - Pressable
   - wall
   - limiter
+  - Actor
   layers:
   - Default
   - TransparentFX

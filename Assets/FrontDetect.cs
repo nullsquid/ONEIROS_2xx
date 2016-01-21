@@ -12,7 +12,9 @@ public class FrontDetect : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         //Debug.Log("flip");
         //if (other.tag == "wall") {
-        ai.flipped = !ai.flipped;
+        if (other.tag == "wall") {
+            ai.flipped = !ai.flipped;
+        }
         //}
     }
 }
