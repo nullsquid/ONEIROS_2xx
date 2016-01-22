@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ConditionalManager : MonoBehaviour {
-    public INPUT[] inputs;
+public class outputToExit : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +10,6 @@ public class ConditionalManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+	
 	}
 }

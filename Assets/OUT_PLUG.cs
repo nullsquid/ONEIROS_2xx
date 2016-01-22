@@ -39,12 +39,32 @@ public class OUT_PLUG : MonoBehaviour {
                 
 
                 transform.parent = defaultParent;
+                if(pluggedIn == true) {
+                    EventManager.TriggerEvent("onToExit");
+                }
                 
+                Debug.Log("Connected");
+                
+            }
+            if (other.tag == "WAIT PORT") {
+                //EventManager.TriggerEvent("binOn");
+
+
+                SendMessageUpwards("PutDown");
+                pluggedIn = true;
+                transform.position = other.transform.position;
+                //SendMessageUpwards("DetachChildren");
+                //transform.parent.GetComponent<CHAR_INTERACT>().isHoldingObject = false;
+                //needs to tell the player to disable all of the state things where the player object thinks its holding an object when its really not
+
+
+                transform.parent = defaultParent;
+
                 Debug.Log("Connected");
                 EventManager.TriggerEvent("binOn");
                 //EventManager.TriggerEvent("hi");
             }
-            
+
         }
         //StartCoroutine(CollisionCooldown());
     }
@@ -52,6 +72,9 @@ public class OUT_PLUG : MonoBehaviour {
         if(pluggedIn == true) {
             if(other.tag == "IN PORT") {
                 pluggedIn = false;
+                
+                EventManager.TriggerEvent("offToExit");
+                
                 //EventManager.TriggerEvent("binOff");
             }
         }

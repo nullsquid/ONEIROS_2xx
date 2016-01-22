@@ -11,5 +11,11 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Reset");
             Application.LoadLevel(Application.loadedLevel);
         }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.RightShift)) {
+            Application.LoadLevel(Application.loadedLevel + 1);
+        }
 	}
 }
