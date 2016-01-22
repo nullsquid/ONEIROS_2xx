@@ -18,6 +18,7 @@ public class PRESSURESWITCH : MonoBehaviour {
     {
         if(other.tag == "Actor") {
             StartCoroutine(Compress());
+            EventManager.TriggerEvent("exitOpen");
         }
         if(other.tag == "Player")
         {
